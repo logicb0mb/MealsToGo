@@ -10,6 +10,7 @@ export const restaurantsRequest = (location) => {
     resolve(mock);
   });
 };
+
 export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
     restaurant.photos = restaurant.photos.map((p) => {
@@ -18,6 +19,7 @@ export const restaurantsTransform = ({ results = [] }) => {
 
     return {
       ...restaurant,
+      address: restaurant.vicinity,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
       isClosedTemporarily: restaurant.business_status === 'CLOSED_TEMPORARILY',
     };
