@@ -1,19 +1,15 @@
 import React, { useContext } from 'react';
-import { Searchbar } from 'react-native-paper';
 import { StatusBar, FlatList, SafeAreaView, View } from 'react-native';
 import styled from 'styled-components/native';
 
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component';
+import { Search } from '../components/search.component';
 import { Spacer } from '../../../components/spacer/spacer.component';
 import { SafeArea } from '../../../components/utility/safe-area.component';
 
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context';
 
 import LottieLoading from '../../../components/utility/lottie-loading.component';
-
-const SearchContainer = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
-`;
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
@@ -28,9 +24,7 @@ export const RestaurantsScreen = () => {
   return (
     <SafeArea>
       {isLoading && <LottieLoading />}
-      <SearchContainer>
-        <Searchbar />
-      </SearchContainer>
+      <Search />
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
