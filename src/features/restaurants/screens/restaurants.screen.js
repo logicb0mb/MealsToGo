@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { StatusBar, FlatList, TouchableOpacity, View } from 'react-native';
-import styled from 'styled-components/native';
+import { TouchableOpacity } from 'react-native';
 
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component';
 import { Search } from '../components/search.component';
@@ -15,7 +14,7 @@ import { RestaurantList } from '../components/restaurant-list.styles';
 import LottieLoading from '../../../components/utility/lottie-loading.component';
 
 export const RestaurantsScreen = ({ navigation }) => {
-  const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  const { isLoading, restaurants } = useContext(RestaurantsContext);
   const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
