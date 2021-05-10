@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spacer } from '../../../components/spacer/spacer.component';
-
+import LottieWaterMelon from '../../../components/utility/lottie-watermelon.component';
 import {
   AccountBackground,
   AccountContainer,
@@ -13,6 +13,7 @@ export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
+      <LottieWaterMelon />
       <Title>MealsToGo</Title>
       <AccountContainer>
         <AuthButton
