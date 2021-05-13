@@ -12,3 +12,5 @@ web-build/
 # macOS
 .DS_Store
 firebaseConfiguration.js
+*/node_modules/**/*
+.runtimeconfig.json
